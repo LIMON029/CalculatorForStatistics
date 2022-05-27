@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AnalysticCalculator</string>
+    <string name="z_value">Z 값</string>
+    <string name="t_value">t 값</string>
+    <string name="chi_value">Chi 값</string>
+    <string name="f_value">F 값</string>
+    <string name="calc_title">일반 통계량 계산</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alpha_text">alpha</string>
+    <string name="test_sort">검정 종류</string>
+    <string name="left_right_all">양측</string>
+    <string name="left_or_right">단측</string>
+    <string name="test_t_value">t값 확인하기</string>
+    <string name="fill_the_alpha">alpha값을 입력하세요</string>
+    <string name="fill_df">자유도를 입력하세요</string>
+</resources>
