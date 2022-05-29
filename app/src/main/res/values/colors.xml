@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btn_color_coral">#FF7F69</color>
     <color name="visibility_none">#00FFFFFF</color>
+    <color name="hint_color">#757575</color>
 </resources>

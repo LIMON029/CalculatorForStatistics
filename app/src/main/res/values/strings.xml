@@ -13,5 +13,7 @@
     <string name="left_or_right">단측</string>
     <string name="test_t_value">t값 확인하기</string>
     <string name="fill_the_alpha">alpha값을 입력하세요</string>
-    <string name="fill_df">자유도를 입력하세요</string>
+    <string name="fill_df">범위 : 1 ~ 100, 120</string>
+    <string name="t_hint">양측 가능 : 0.1 / 0.05 / 0.01 / 0.005 / 0.001\n단측 가능 : 양측 / 0.4 / 0.25 / 0.025 / 0.0025 / 0.0005</string>
+    <string name="reset">초기화</string>
 </resources>

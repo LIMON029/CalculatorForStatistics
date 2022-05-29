@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/jisoy/Desktop/android/AnalysticCalculator/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/jisoy/Desktop/android/AnalysticCalculator/app/src/main/res/layout/fragment_t.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/jisoy/Desktop/android/AnalysticCalculator/app/src/main/res/layout/fragment_t.xml" value="0.25" />
         <entry key="..\:/Users/jisoy/Desktop/android/AnalysticCalculator/app/src/main/res/layout/fragment_t_.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/jisoy/Desktop/android/AnalysticCalculator/app/src/main/res/layout/fragment_z.xml" value="0.1" />
       </map>
     </option>
   </component>
