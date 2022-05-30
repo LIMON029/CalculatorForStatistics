@@ -2,229 +2,145 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tMainWrapper"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/chiMainWrapper"
     android:background="@color/black"
     android:clickable="true"
     android:focusable="true"
     android:paddingVertical="20dp"
     android:paddingStart="10dp"
     android:paddingEnd="10dp"
-    tools:context=".fragment.TFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ChiFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tAlphaFullWrapper"
+        android:id="@+id/chiAlphaFullWrapper"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/tDfWrapper"
+        app:layout_constraintBottom_toTopOf="@id/chiDfWrapper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/tAlphaWrapper"
+            android:id="@+id/chiAlphaWrapper"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginEnd="10dp"
-            app:layout_constraintBottom_toTopOf="@id/tAlphaHint"
+            app:layout_constraintBottom_toTopOf="@id/chiAlphaHint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tAlphaTitle"
+                android:id="@+id/chiAlphaTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/alpha_text"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tAlphaInput"
+                app:layout_constraintEnd_toStartOf="@id/chiAlphaInput"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/tAlphaInput"
+                android:id="@+id/chiAlphaInput"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/white"
                 android:hint="@string/fill_the_alpha"
                 android:imeOptions="actionDone"
                 android:inputType="numberDecimal"
-                android:labelFor="@id/tAlphaTitle"
+                android:labelFor="@id/chiAlphaTitle"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="2"
-                app:layout_constraintStart_toEndOf="@id/tAlphaTitle"
+                app:layout_constraintStart_toEndOf="@id/chiAlphaTitle"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/tAlphaHint"
+            android:id="@+id/chiAlphaHint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:text="@string/t_hint"
+            android:text="@string/chi_hint"
             android:textAlignment="center"
             android:textColor="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tAlphaWrapper" />
+            app:layout_constraintTop_toBottomOf="@id/chiAlphaWrapper" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tDfWrapper"
+        android:id="@+id/chiDfWrapper"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toTopOf="@id/tTestFullWrapper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tAlphaFullWrapper">
+        app:layout_constraintTop_toBottomOf="@id/chiAlphaFullWrapper">
 
         <TextView
-            android:id="@+id/tDfTitle"
+            android:id="@+id/chiDfTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/df_ko"
             android:textAlignment="center"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tDfInput"
+            app:layout_constraintEnd_toStartOf="@id/chiDfInput"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/tDfInput"
+            android:id="@+id/chiDfInput"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/white"
             android:hint="@string/fill_df"
             android:inputType="number"
-            android:labelFor="@id/tDfTitle"
+            android:labelFor="@id/chiDfTitle"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintStart_toEndOf="@id/tDfTitle"
+            app:layout_constraintStart_toEndOf="@id/chiDfTitle"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tTestFullWrapper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tDfWrapper">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/tTestWrapper"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:id="@+id/tTestTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_sort"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tTestGroup"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <RadioGroup
-                android:id="@+id/tTestGroup"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="2"
-                app:layout_constraintStart_toEndOf="@id/tTestTitle"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/t_test_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/left_right_all"
-                    android:textColor="@color/white" />
-
-                <RadioButton
-                    android:id="@+id/t_test_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/left_or_right"
-                    android:textColor="@color/white" />
-
-            </RadioGroup>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/t_testHint"
-            android:layout_width="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tTestWrapper"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textAlignment="center"
-            android:text="@string/t_test_hint"
-            android:textColor="@color/hint_color"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tBtnWrapper"
+        android:id="@+id/chiBtnWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tTestFullWrapper">
+        app:layout_constraintTop_toBottomOf="@id/chiDfWrapper">
 
         <Button
-            android:id="@+id/tSubmitBtn"
+            android:id="@+id/chiSubmitBtn"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/visibility_none"
-            android:text="@string/test_t_value"
+            android:text="@string/test_chi_value"
             android:textAllCaps="false"
             android:textColor="@color/btn_color_coral"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -236,7 +152,7 @@
             tools:visibility="visible" />
 
         <Button
-            android:id="@+id/tResetBtn"
+            android:id="@+id/chiResetBtn"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -254,27 +170,27 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/tResultWrapper"
+        android:id="@+id/chiResultWrapper"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tBtnWrapper">
+        app:layout_constraintTop_toBottomOf="@id/chiBtnWrapper">
 
         <TextView
-            android:id="@+id/tExplainText"
+            android:id="@+id/chiExplainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="alpha값 0.01에서 자유도 10의 단측 검정일 때의 t 값" />
+            tools:text="alpha값 0.01에서 자유도 10일 때의 chi 값" />
 
         <TextView
-            android:id="@+id/tResultText"
+            android:id="@+id/chiResultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -283,7 +199,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tExplainText"
+            app:layout_constraintTop_toBottomOf="@id/chiExplainText"
             tools:text="0.94" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
