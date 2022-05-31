@@ -187,7 +187,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="alpha값 0.01에서 자유도 10일 때의 chi 값" />
+            tools:text="alpha값 0.01에서 자유도 10일 때의 χ값" />
 
         <TextView
             android:id="@+id/chiResultText"

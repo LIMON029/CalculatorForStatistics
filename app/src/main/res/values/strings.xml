@@ -20,7 +20,7 @@
     <string name="z_test_hint">양측 검정: α/2에 해당하는 z값 / 단측 검정: α에 해당하는 z값</string>
     <string name="t_test_hint">양측 검정: α/2에 해당하는 t값 / 단측 검정: α에 해당하는 t값</string>
     <string name="test_z_value">z값 확인하기</string>
-    <string name="test_chi_value">chi값 확인하기</string>
+    <string name="test_chi_value">χ값 확인하기</string>
     <string name="test_f_value">F값 확인하기</string>
     <string name="df_ko">자유도</string>
     <string name="df_ko_1">자유도1</string>

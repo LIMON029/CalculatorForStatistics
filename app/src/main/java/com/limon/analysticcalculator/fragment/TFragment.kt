@@ -19,6 +19,7 @@ import com.limon.analysticcalculator.utils.CONST.Data_DB
 import com.limon.analysticcalculator.utils.CONST.TDATA
 import com.limon.analysticcalculator.utils.DataTypes
 import com.limon.analysticcalculator.utils.Parser
+import com.limon.analysticcalculator.utils.getDFRange
 import com.limon.analysticcalculator.utils.getTAlphaList
 import java.lang.Exception
 
@@ -119,14 +120,15 @@ class TFragment : Fragment() {
                 setTTestGroupBtn(TEST_ALL)
             } else {
                 setTTestGroupBtn(TEST_ONE)
-                tTestOne.isSelected = true
             }
+            tTestOne.isSelected = true
             false
         }
     }
 
     private fun initSubmitBtn() = with(binding) {
         val alphaList = getTAlphaList()
+        val dfRange = getDFRange()
         tSubmitBtn.setOnClickListener {
             tAlphaInput.clearFocus()
             tDfInput.clearFocus()
@@ -136,7 +138,7 @@ class TFragment : Fragment() {
                 Toast.makeText(context, "잘못된 alpha값입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(df < 0){
+            else if(!dfRange.contains(df)){
                 Toast.makeText(context, "잘못된 자유도입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -148,8 +150,8 @@ class TFragment : Fragment() {
             tExplainText.text = "alpha값 ${alpha}에서 자유도 ${df}의 ${if(tTestAllCheck) "양측검정" else "단측검정"}일 때의 t값"
             tResultText.text = result.t.toString()
 
-            tAlphaInput.isClickable = false
-            tDfInput.isClickable = false
+            tAlphaInput.isEnabled = false
+            tDfInput.isEnabled = false
             tSubmitBtn.isGone = true
             tResetBtn.isGone = false
             setTTestGroupBtn(ALL_GONE)
@@ -158,8 +160,8 @@ class TFragment : Fragment() {
 
     private fun initResetBtn() = with(binding) {
         tResetBtn.setOnClickListener {
-            tAlphaInput.isClickable = true
-            tDfInput.isClickable = true
+            tAlphaInput.isEnabled = true
+            tDfInput.isEnabled = true
             tAlphaInput.text.clear()
             tDfInput.text.clear()
             setTTestGroupBtn(ALL_ACTIVE)
@@ -187,16 +189,16 @@ class TFragment : Fragment() {
                 }
             }
             ALL_GONE -> {
-                tTestAll.isClickable = false
-                tTestOne.isClickable = false
+                tTestAll.isEnabled = false
+                tTestOne.isEnabled = false
                 context?.let {
                     tTestAll.setTextColor(ContextCompat.getColor(it, R.color.hint_color))
                     tTestOne.setTextColor(ContextCompat.getColor(it, R.color.hint_color))
                 }
             }
             ALL_ACTIVE -> {
-                tTestAll.isClickable = true
-                tTestOne.isClickable = true
+                tTestAll.isEnabled = true
+                tTestOne.isEnabled = true
                 tTestGroup.clearCheck()
                 context?.let {
                     tTestAll.setTextColor(ContextCompat.getColor(it, R.color.white))

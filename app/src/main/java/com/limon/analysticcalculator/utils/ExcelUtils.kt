@@ -19,12 +19,12 @@ private val fileNameList = mapOf(
     CHIDATA to "chidata.xls"
 )
 
-fun initZAlphaList() {
-    var num = 0.00f
-    zAlphaList.add(num)
+private fun initZAlphaList() {
+    var num = 0.00
+    zAlphaList.add(num.toFloat())
     for(i:Int in 1..399) {
-        num += 0.01f
-        zAlphaList.add(num)
+        num += 0.01
+        zAlphaList.add(num.toFloat())
     }
 }
 
@@ -33,6 +33,7 @@ fun getTAlphaList():List<Float> {
 }
 
 fun getZAlphaList():List<Float> {
+    initZAlphaList()
     return zAlphaList
 }
 
@@ -42,6 +43,10 @@ fun getChiAlphaList():List<Float> {
 
 fun getFAlphaList():List<Float> {
     return fAlphaList
+}
+
+fun getDFRange(): List<Int> {
+    return (1..100).toList() + listOf(120)
 }
 
 fun getData(context:Context, dataType:String):List<Any> {

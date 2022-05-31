@@ -39,14 +39,15 @@ class MainActivity : AppCompatActivity() {
         dataPreferences = getSharedPreferences(Data_DB, MODE_PRIVATE)
 
         initDatas()
-//        initBtn()
+        initBtn()
     }
 
     private fun initDatas() {
         if(dataPreferences.getString(ZDATA, null) != null){
-            Log.e("MMAIN", "NULL")
+            Log.e("MMAIN", "Already Init")
             return
         }
+        Log.e("MMAIN", "initData")
         val editor = dataPreferences.edit()
         val zDatas = getData(context = baseContext, ZDATA)
         val tDatas = getData(context = baseContext, TDATA)
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             for(data in datas[key]!!){
                 jsonList.put(data)
             }
-            Log.e("MMAIN", jsonList.toString())
             editor.putString(key, jsonList.toString())
             editor.apply()
         }
