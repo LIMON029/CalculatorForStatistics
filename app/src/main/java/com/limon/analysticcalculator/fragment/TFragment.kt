@@ -105,7 +105,7 @@ class TFragment : Fragment() {
         tTestAll.setOnTouchListener { _, _ ->
             tAlphaInput.clearFocus()
             tDfInput.clearFocus()
-            if(allNumList.contains(tAlphaInput.text.toString().toFloat())){
+            if(allNumList.contains(tAlphaInput.text.toString().toFloatOrNull()?:-1.0f)){
                 setTTestGroupBtn(TEST_ALL)
                 tTestAll.isSelected = true
             } else {
@@ -116,7 +116,7 @@ class TFragment : Fragment() {
         tTestOne.setOnTouchListener { _, _ ->
             tAlphaInput.clearFocus()
             tDfInput.clearFocus()
-            if(allNumList.contains(tAlphaInput.text.toString().toFloat())){
+            if(allNumList.contains(tAlphaInput.text.toString().toFloatOrNull()?:-1.0f)){
                 setTTestGroupBtn(TEST_ALL)
             } else {
                 setTTestGroupBtn(TEST_ONE)

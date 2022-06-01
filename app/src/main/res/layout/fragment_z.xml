@@ -35,7 +35,7 @@
                 android:id="@+id/zAlphaTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/alpha_text"
+                android:text="@string/z_value_ko"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/white"
-                android:hint="@string/fill_the_alpha"
+                android:hint="@string/input_z_value"
                 android:imeOptions="actionDone"
                 android:inputType="numberDecimal"
                 android:labelFor="@id/zAlphaTitle"
@@ -83,94 +83,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/zTestFullWrapper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/zAlphaFullWrapper">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/zTestWrapper"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:id="@+id/zTestTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_sort"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/zTestGroup"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <RadioGroup
-                android:id="@+id/zTestGroup"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="2"
-                app:layout_constraintStart_toEndOf="@id/zTestTitle"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <RadioButton
-                    android:id="@+id/z_test_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="false"
-                    android:text="@string/left_right_all"
-                    android:textColor="@color/white" />
-
-                <RadioButton
-                    android:id="@+id/z_test_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/left_or_right"
-                    android:textColor="@color/white" />
-
-            </RadioGroup>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/z_testHint"
-            android:layout_width="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/zTestWrapper"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textAlignment="center"
-            android:text="@string/z_test_hint"
-            android:textColor="@color/hint_color"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/zBtnWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/zTestFullWrapper">
+        app:layout_constraintTop_toBottomOf="@id/zAlphaFullWrapper">
 
         <Button
             android:id="@+id/zSubmitBtn"
@@ -224,7 +142,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="alpha값 0.01에서 단측 검정일 때의 z 값" />
+            tools:text="z값 0.01에서의 값" />
 
         <TextView
             android:id="@+id/zResultText"

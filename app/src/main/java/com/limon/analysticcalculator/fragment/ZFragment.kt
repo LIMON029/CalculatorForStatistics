@@ -22,7 +22,6 @@ class ZFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val oneNumList = getZAlphaList()
-    private var zTestAllCheck = false
 
     private lateinit var zDatas: List<DataTypes.ZData>
 
@@ -48,7 +47,6 @@ class ZFragment : Fragment() {
             }
         }
         initEditText()
-        initRadioButtons()
         initSubmitBtn()
         initResetBtn()
     }
@@ -62,46 +60,8 @@ class ZFragment : Fragment() {
             else false
         }
         zAlphaInput.setOnFocusChangeListener { view, hasFocus ->
-            if(!hasFocus) {
-                val alpha = zAlphaInput.text.toString().toFloatOrNull() ?: -1.0f
-                if(oneNumList.contains(alpha / 2)) {
-                    setZTestGroupBtn(TEST_ALL)
-                } else {
-                    setZTestGroupBtn(TEST_ONE)
-                }
-            }
             val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
-        }
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
-    private fun initRadioButtons() = with(binding) {
-        zTestGroup.setOnCheckedChangeListener { _, i ->
-            zTestAllCheck = i == R.id.t_test_all
-        }
-
-        zTestAll.setOnTouchListener { _, _ ->
-            zAlphaInput.clearFocus()
-            val alpha = zAlphaInput.text.toString().toFloat()
-            if(oneNumList.contains(alpha / 2)){
-                setZTestGroupBtn(TFragment.TEST_ALL)
-                zTestAll.isSelected = true
-            } else {
-                setZTestGroupBtn(TFragment.TEST_ONE)
-            }
-            false
-        }
-        zTestOne.setOnTouchListener { _, _ ->
-            zAlphaInput.clearFocus()
-            val alpha = zAlphaInput.text.toString().toFloat()
-            if(oneNumList.contains(alpha / 2)){
-                setZTestGroupBtn(TFragment.TEST_ALL)
-            } else {
-                setZTestGroupBtn(TFragment.TEST_ONE)
-            }
-            zTestOne.isSelected = true
-            false
         }
     }
 
@@ -110,21 +70,17 @@ class ZFragment : Fragment() {
             zAlphaInput.clearFocus()
             val alpha = zAlphaInput.text.toString().toFloatOrNull() ?: -1.0f
             if(!oneNumList.contains(alpha)){
-                Toast.makeText(context, "잘못된 alpha값입니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "잘못된 z값입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(zTestGroup.checkedRadioButtonId == -1) {
-                Toast.makeText(context, "검정방법을 선택해주세요.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+
             val result = zDatas[(alpha * 100).toInt()]
-            zExplainText.text = "alpha값 ${alpha}에서 ${if(zTestAllCheck) "양측검정" else "단측검정"}일 때의 z값"
+            zExplainText.text = "z=${alpha}에서의 값"
             zResultText.text = result.z.toString()
 
             zAlphaInput.isEnabled = false
             zSubmitBtn.isGone = true
             zResetBtn.isGone = false
-            setZTestGroupBtn(TFragment.ALL_GONE)
         }
     }
 
@@ -132,48 +88,10 @@ class ZFragment : Fragment() {
         zResetBtn.setOnClickListener {
             zAlphaInput.isEnabled = true
             zAlphaInput.text.clear()
-            setZTestGroupBtn(TFragment.ALL_ACTIVE)
             zExplainText.text = ""
             zResultText.text = ""
             zSubmitBtn.isGone = false
             zResetBtn.isGone = true
-        }
-    }
-
-    private fun setZTestGroupBtn(case:String) = with(binding) {
-        when(case) {
-            TEST_ALL -> {
-                zTestAll.isClickable = true
-                zTestGroup.clearCheck()
-                context?.let {
-                    zTestAll.setTextColor(ContextCompat.getColor(it, R.color.white))
-                }
-            }
-            TEST_ONE -> {
-                zTestAll.isClickable = false
-                zTestGroup.clearCheck()
-                context?.let {
-                    zTestAll.setTextColor(ContextCompat.getColor(it, R.color.hint_color))
-                }
-            }
-            ALL_GONE -> {
-                zTestAll.isEnabled = false
-                zTestOne.isEnabled = false
-                context?.let {
-                    zTestAll.setTextColor(ContextCompat.getColor(it, R.color.hint_color))
-                    zTestOne.setTextColor(ContextCompat.getColor(it, R.color.hint_color))
-                }
-            }
-            ALL_ACTIVE -> {
-                zTestAll.isEnabled = true
-                zTestOne.isEnabled = true
-                zTestGroup.clearCheck()
-                context?.let {
-                    zTestAll.setTextColor(ContextCompat.getColor(it, R.color.white))
-                    zTestOne.setTextColor(ContextCompat.getColor(it, R.color.white))
-                }
-            }
-            else -> {}
         }
     }
 

@@ -15,7 +15,7 @@
     <string name="fill_df">범위 : 1 ~ 100, 120</string>
     <string name="t_hint">양측 가능 : 0.1 / 0.05 / 0.01 / 0.005 / 0.001\n단측 가능 : 양측 / 0.4 / 0.25 / 0.025 / 0.0025 / 0.0005</string>
     <string name="reset">초기화</string>
-    <string name="z_hint">alpha값의 범위 : 0.0 ~ 3.99</string>
+    <string name="z_hint">z값의 범위 : 0.0 ~ 3.99</string>
     <string name="f_hint">alpha값 : 0.1 / 0.05 / 0.005 / 0.01 / 0.025</string>
     <string name="z_test_hint">양측 검정: α/2에 해당하는 z값 / 단측 검정: α에 해당하는 z값</string>
     <string name="t_test_hint">양측 검정: α/2에 해당하는 t값 / 단측 검정: α에 해당하는 t값</string>
@@ -26,4 +26,6 @@
     <string name="df_ko_1">자유도1</string>
     <string name="df_ko_2">자유도2</string>
     <string name="chi_hint">0.995 / 0.99 / 0.975 / 0.95 / 0.9\n0.1 / 0.05 / 0.025 / 0.01 / 0.005</string>
+    <string name="z_value_ko">z값</string>
+    <string name="input_z_value">z값을 입력하세요</string>
 </resources>
