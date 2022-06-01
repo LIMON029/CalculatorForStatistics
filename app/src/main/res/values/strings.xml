@@ -28,4 +28,29 @@
     <string name="chi_hint">0.995 / 0.99 / 0.975 / 0.95 / 0.9\n0.1 / 0.05 / 0.025 / 0.01 / 0.005</string>
     <string name="z_value_ko">z값</string>
     <string name="input_z_value">z값을 입력하세요</string>
+    <string name="text_0">0</string>
+    <string name="text_1">1</string>
+    <string name="text_2">2</string>
+    <string name="text_3">3</string>
+    <string name="text_4">4</string>
+    <string name="text_5">5</string>
+    <string name="text_6">6</string>
+    <string name="text_7">7</string>
+    <string name="text_8">8</string>
+    <string name="text_9">9</string>
+    <string name="text_ac">AC</string>
+    <string name="text_root">√</string>
+    <string name="text_power">^</string>
+    <string name="text_e">e</string>
+    <string name="text_ln">ln</string>
+    <string name="text_bracket_open">(</string>
+    <string name="text_bracket_close">)</string>
+    <string name="text_mod">%</string>
+    <string name="text_division">÷</string>
+    <string name="text_multi">×</string>
+    <string name="text_minus">-</string>
+    <string name="text_plus">+</string>
+    <string name="text_dot">.</string>
+    <string name="text_back">⬅</string>
+    <string name="text_equal">=</string>
 </resources>

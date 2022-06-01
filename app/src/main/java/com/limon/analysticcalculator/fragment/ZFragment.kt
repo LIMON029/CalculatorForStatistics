@@ -10,9 +10,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
-import com.limon.analysticcalculator.R
 import com.limon.analysticcalculator.databinding.FragmentZBinding
 import com.limon.analysticcalculator.utils.*
 import java.lang.Exception
@@ -59,12 +57,13 @@ class ZFragment : Fragment() {
             }
             else false
         }
-        zAlphaInput.setOnFocusChangeListener { view, hasFocus ->
+        zAlphaInput.setOnFocusChangeListener { view, _ ->
             val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initSubmitBtn() = with(binding) {
         zSubmitBtn.setOnClickListener {
             zAlphaInput.clearFocus()
@@ -98,12 +97,5 @@ class ZFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-        const val TEST_ALL = "TEST_ALL"
-        const val TEST_ONE = "TEST_ONE"
-        const val ALL_GONE = "ALL_GONE"
-        const val ALL_ACTIVE = "ALL_ACTIVE"
     }
 }

@@ -12,7 +12,6 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.view.isGone
-import com.limon.analysticcalculator.R
 import com.limon.analysticcalculator.databinding.FragmentFBinding
 import com.limon.analysticcalculator.utils.*
 import java.lang.Exception

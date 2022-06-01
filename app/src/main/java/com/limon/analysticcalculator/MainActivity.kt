@@ -7,10 +7,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import com.limon.analysticcalculator.utils.getData
 import com.limon.analysticcalculator.databinding.ActivityMainBinding
-import com.limon.analysticcalculator.fragment.ChiFragment
-import com.limon.analysticcalculator.fragment.FFragment
-import com.limon.analysticcalculator.fragment.TFragment
-import com.limon.analysticcalculator.fragment.ZFragment
+import com.limon.analysticcalculator.fragment.*
 import com.limon.analysticcalculator.utils.CONST.CHIDATA
 import com.limon.analysticcalculator.utils.CONST.Data_DB
 import com.limon.analysticcalculator.utils.CONST.FDATA
@@ -30,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private val tFragment: TFragment = TFragment()
     private val chiFragment: ChiFragment = ChiFragment()
     private val fFragment: FFragment = FFragment()
+    private val calcFragment:CalcFragment = CalcFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         tBtn.setOnClickListener { replaceFragment(T) }
         chiBtn.setOnClickListener { replaceFragment(CHI) }
         fBtn.setOnClickListener { replaceFragment(F) }
+        commonBtn.setOnClickListener { replaceFragment(COMMON) }
     }
 
     private fun replaceFragment(type:Int) {
@@ -82,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             T -> fragment = tFragment
             CHI -> fragment = chiFragment
             F -> fragment = fFragment
+            COMMON -> fragment = calcFragment
         }
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
@@ -99,5 +99,6 @@ class MainActivity : AppCompatActivity() {
         private const val T = 1
         private const val CHI = 2
         private const val F = 3
+        private const val COMMON = 4
     }
 }
