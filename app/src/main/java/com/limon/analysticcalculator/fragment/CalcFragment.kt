@@ -65,10 +65,15 @@ class CalcFragment : Fragment() {
                 } else if(now.last() == '.') {
                     Toast.makeText(context, "소수점 뒤에는 연산자를 사용할 수 없습니다.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
-                } else if(btn == bracketOpenBtn || btn == bracketCloseBtn) {
+                } else if(btn == bracketOpenBtn) {
                     if(now == "0") now = ""
                     else if (listOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'e').contains(now.last())) {
                         Toast.makeText(context, "숫자 뒤에는 괄호를 사용할 수 없습니다.", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
+                } else if(btn == bracketCloseBtn) {
+                    if(now == "0") {
+                        Toast.makeText(context, "맨 앞에는 닫는 괄호를 사용할 수 없습니다.", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
                 } else if(!listOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'e').contains(now.last())) {
